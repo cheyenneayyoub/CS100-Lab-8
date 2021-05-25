@@ -14,6 +14,7 @@ using namespace std;
 		Op* num2 = new Op(1.0);
 		Mult* Mtest = new Mult(num1, num2);
 		EXPECT_EQ(Mtest->evaluate(), 1.0);
+		delete num1, num2, Mtest;
 }
 
 	 TEST(MultTest, MultEvalN2_3) {
@@ -21,6 +22,7 @@ using namespace std;
                 Op* num2 = new Op(3);
                 Mult* Mtest = new Mult(num1, num2);
                 EXPECT_EQ(Mtest->evaluate(), -6);
+		delete num1, num2, Mtest;
 }
 
 	TEST(MultTest, MultEval3_50) {
@@ -29,6 +31,7 @@ using namespace std;
                 Mult* Mtest = new Mult(num1, num2);
                 string res = "(3.000000*50.000000)";
 		EXPECT_EQ(Mtest->stringify(), res);
+		delete num1, num2, Mtest;
 }
 
 	TEST(MultTest, MultEvalZ_10) {
@@ -36,6 +39,7 @@ using namespace std;
                 Op* num2 = new Op(10);
                 Mult* Mtest = new Mult(num1, num2);
                 EXPECT_EQ(Mtest->evaluate(), 0);
+		delete num1, num2, Mtest;
 }
 
 
@@ -46,6 +50,7 @@ using namespace std;
 		Op* num4 = new Op(3);
                 Mult* Mtest = new Mult(num3, num4);
                 EXPECT_EQ(Mtest->evaluate(), 9);
+		delete num1, num2, num3, num4, Mtest;
 }
 
 
@@ -60,6 +65,7 @@ using namespace std;
 		Pow* pw = new Pow(addn,num3);
 		Mult* multn = new Mult(pw, num3);
 		EXPECT_EQ(multn->evaluate(), 18.0);
+		delete num1, num2, num3, num4, num5, addn, pw, multn;
 }
 
 	TEST(MultTest, MultStrMany){
@@ -73,6 +79,7 @@ using namespace std;
                 Pow* pw = new Pow(addn,num3);
                 Mult* multn = new Mult(pw, num3);
                 EXPECT_EQ(multn->stringify(), "(((2.000000+1.000000)**2.000000)*2.000000)");
+		delete num1, num2, num3, num4, num5, addn, pw, multn;
 }
 
 //new tests
@@ -81,6 +88,7 @@ TEST(MultTest, NumOfChildren){
 	Base* val2 = new Op(2.0);
 	Base* multn = new Mult(val1,val2);
 	EXPECT_EQ(multn->number_of_children(),2);
+	delete val1, val2, multn;
 }
 
 TEST(MultTest, getChild){
@@ -89,6 +97,7 @@ TEST(MultTest, getChild){
 	Base* multn = new Mult(val1,val2);
 	EXPECT_EQ(multn->get_child(0),val1);
 	EXPECT_EQ(multn->get_child(1),val2);
+	delete val1, val2, multn;
 }
 
 #endif
