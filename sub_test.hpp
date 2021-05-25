@@ -1,10 +1,13 @@
+#ifndef __SUB_TEST_HPP
+#define __SUB_TEST_HPP
+
 #include "gtest/gtest.h"
 #include "sub.hpp"
 #include "add.hpp"
 #include "div.hpp"
 #include "pow.hpp"
 #include "mult.hpp"
-
+#include "op.hpp"
 using namespace std;
 
 //old tests
@@ -103,3 +106,5 @@ TEST(SubTest, getChild){
 	EXPECT_EQ(subn->get_child(0),val1);
 	EXPECT_EQ(subn->get_child(1),val2);
 }
+
+#endif
