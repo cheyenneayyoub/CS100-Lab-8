@@ -1,3 +1,6 @@
+#ifndef __SUB_TEST_HPP__
+#define __SUB_TEST_HPP__
+
 #include "gtest/gtest.h"
 #include "sub.hpp"
 #include "add.hpp"
@@ -103,3 +106,5 @@ TEST(AddTest, getChild){
 	EXPECT_EQ(subn->get_child(0),val1);
 	EXPECT_EQ(subn->get_child(1),val2);
 }
+#endif
+

@@ -1,9 +1,10 @@
-#ifndef _MULT_TEST_HPP
-#define _MULT_TEST_HPP
+#ifndef __MULT_TEST_HPP__
+#define __MULT_TEST_HPP__
 
 #include "gtest/gtest.h"
 #include "mult.hpp"
 #include "add.hpp"
+#include "op.hpp"
 
 using namespace std;
 

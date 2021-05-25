@@ -1,12 +1,12 @@
-#ifndef _RANDTEST_HPP_
-#define _RANDTEST_HPP
+#ifndef __RAND_TEST_HPP__
+#define __RAND_TEST_HPP__
 
 #include "gtest/gtest.h"
 #include "base.hpp"
 #include "rand.hpp"
+
 #include <iostream>
 #include <string>
-
 
 using namespace std;
 

@@ -1,5 +1,5 @@
-#ifndef _DIV_TEST_HPP
-#define _DIV_TEST_HPP
+#ifndef __DIV_TEST_HPP__
+#define __DIV_TEST_HPP__
 
 #include "gtest/gtest.h"
 #include "div.hpp"
@@ -7,6 +7,7 @@
 #include "mult.hpp"
 #include "add.hpp"
 #include "pow.hpp"
+#include "op.hpp"
 
 using namespace std;
 
