@@ -15,7 +15,7 @@ TEST(AddTest, AddEvalPositive){
 	Add *test = nullptr;
 	test = new Add(val1, val2);
 	EXPECT_EQ(test->evaluate(),3.8);
-	delete val1, val2, test;
+	delete val1; delete val2; delete test;
 }
 
 TEST(AddTest, AddEvalZero){
@@ -25,7 +25,7 @@ TEST(AddTest, AddEvalZero){
         Add *test = nullptr;
 	test = new Add(val1, val2);
         EXPECT_EQ(test->evaluate(),0.0);
-	delete val1, val2, test;
+	delete val1;delete  val2; delete test;
 }
 
 TEST(AddTest, AddEvalNegative){
@@ -35,7 +35,7 @@ TEST(AddTest, AddEvalNegative){
         Add *test = nullptr;
 	test = new Add(val1, val2);
         EXPECT_EQ(test->evaluate(),-3.8);
-	delete val1, val2, test;
+	delete val1;delete val2; delete test;
 }
 
 
@@ -46,7 +46,7 @@ TEST(AddTest, AddStringPos){
 	Add *test = nullptr;
 	test = new Add(val1, val2);
 	EXPECT_EQ(test->stringify(), "(1.000000+2.800000)");
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 
@@ -57,7 +57,7 @@ TEST(AddTest, AddStringNeg){
         Add *test = nullptr;
 	test = new Add(val1, val2);
         EXPECT_EQ(test->stringify(), "(-1.000000+-2.800000)");
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 TEST(AddTest, AddStringZero){
@@ -67,7 +67,7 @@ TEST(AddTest, AddStringZero){
         Add *test = nullptr;
 	test = new Add(val1, val2);
         EXPECT_EQ(test->stringify(), "(0.000000+0.000000)");
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 TEST(AddTest, NumOfChildren){
@@ -77,7 +77,7 @@ TEST(AddTest, NumOfChildren){
 	Base* addn = nullptr;
 	addn = new Add(val1,val2);
 	EXPECT_EQ(addn->number_of_children(),2);
-	delete val1, val2, addn;
+	delete val1;delete val2;delete addn;
 }
 
 TEST(AddTest, getChild){
@@ -87,5 +87,5 @@ TEST(AddTest, getChild){
 	addn = new Add(val1,val2);
 	EXPECT_EQ(addn->get_child(0),val1);
 	EXPECT_EQ(addn->get_child(1),val2);
-	delete val1, val2, addn;
+	delete val1;delete val2;delete addn;
 }
