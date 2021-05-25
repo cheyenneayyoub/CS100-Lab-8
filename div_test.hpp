@@ -7,6 +7,7 @@
 #include "mult.hpp"
 #include "add.hpp"
 #include "pow.hpp"
+#include "op.hpp"
 
 using namespace std;
 
