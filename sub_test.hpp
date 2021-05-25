@@ -96,7 +96,7 @@ TEST(SubTest, numchildrentest){
 	EXPECT_EQ(Sub->number_of_children(),2);
 }
 
-TEST(AddTest, getChild){
+TEST(SubTest, getChild){
 	Base* val1 = new Op(5.0);
         Base* val2 = new Op(10.0);
 	Base* subn = new Sub(val1,val2);
