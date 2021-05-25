@@ -20,17 +20,6 @@ public:
 		return std::to_string(val); 
 	}
 
-	int number_of_children(){
-		int num = 0;
-		if(lhs != NULL){
-			num += 1;
-		};
-		if(rhs != NULL){
-			num += 1;
-		}
-		return num;
-	}
-
 	Base* get_child(int i) {
 		return NULL;
 	}
