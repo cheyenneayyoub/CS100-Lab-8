@@ -25,7 +25,10 @@ class Rand : public Base {
 	Base* get_child(int i){
 		return NULL;
 	}
-	
+
+	void accept(Visitor* visitor, int index) {
+		visitor->visit_rand(this);
+	}	
 	private:
 	double numval;
 	string strval;
