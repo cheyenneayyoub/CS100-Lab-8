@@ -108,14 +108,14 @@ TEST(PowTest, PowStrMany){
 TEST(PowTest, NumOfChildren){
 	Base* val1 = new Op(3.0);
 	Base* val2 = new Op(2.0);
-	Base* pown = new Add(val1,val2);
+	Base* pown = new Pow(val1,val2);
 	EXPECT_EQ(pown->number_of_children(),2);
 }
 
 TEST(PowTest, getChild){
 	Base* val1 = new Op(3.0);
         Base* val2 = new Op(2.0);
-	Base* pown = new Add(val1,val2);
+	Base* pown = new Pow(val1,val2);
 	EXPECT_EQ(pown->get_child(0),val1);
 	EXPECT_EQ(pown->get_child(1),val2);
 }
