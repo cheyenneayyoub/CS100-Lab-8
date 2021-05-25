@@ -16,6 +16,7 @@ using namespace std;
 		Op* num2 = new Op(1);
 		Div* Dtest = new Div(num1, num2);
 		EXPECT_EQ(Dtest->evaluate(), 1);
+		delete num1, num2, Dtest;
 }
 
 	 TEST(DivTest, DivEvalN18_3) {
@@ -23,6 +24,7 @@ using namespace std;
                 Op* num2 = new Op(3);
                 Div* Dtest = new Div(num1, num2);
                 EXPECT_EQ(Dtest->evaluate(),-6 );
+		delete num1, num2, Dtest;
 }
 
 	TEST(DivTest, DivEval30_3) {
@@ -30,6 +32,7 @@ using namespace std;
                 Op* num2 = new Op(3);
                 Div* Dtest = new Div(num1, num2);
                 EXPECT_EQ(Dtest->stringify(), "(30.000000/3.000000)");
+		delete num1, num2, Dtest;
 }
 
 	TEST(DivTest, DivEval100_10) {
@@ -37,6 +40,7 @@ using namespace std;
                 Op* num2 = new Op(10);
                 Div* Dtest = new Div(num1, num2);
                 EXPECT_EQ(Dtest->evaluate(), 10);
+		delete num1, num2, Dtest;
 }
 
 	TEST(DivTest, DivEvalSub) {
@@ -46,12 +50,14 @@ using namespace std;
 		Op* num4 = new Op(9);
                 Div* Dtest = new Div(num3, num4);
                 EXPECT_EQ(Dtest->evaluate(), 10);
+		delete num1, num2, Dtest, num3, num4;
 }
 
 	TEST(DivTest, DivByZero){
 		Op* num1 = new Op(10.0);
 		Op* num2 = new Op(0.0);
 		EXPECT_THROW(Div(num1,num2), invalid_argument); 
+		delete num1, num2;
 }
 
 	TEST(DivTest, DivMany){
@@ -64,6 +70,7 @@ using namespace std;
 		Add* addn = new Add(mul, num4);
 		Div* divn = new Div(addn, num5);
 		EXPECT_EQ(divn->evaluate(), 4.0);
+		delete num1, num2, num3, num4, num5, mul, addn, divn;
 }
 
 	TEST(DivTest, DivStringMany){
@@ -76,12 +83,14 @@ using namespace std;
 		Base* pw = new Pow(subn,num1);
                 Base* divn = new Div(pw, num5);
                 EXPECT_EQ(divn->stringify(), "(((5.000000-3.000000)**3.000000)/4.000000)");		
+		delete num1, num2, num3, num4, num5, subn, pw, divn;
 }
 
 TEST(DivTest, stringify_THREE){
 	Base *num1 = new Op(7), *num2 = new Op(5), *num3 = new Op(1);
 	Base *left = new Mult(num1, num2), *test = new Div(left, num3);
 	EXPECT_EQ("((7.000000*5.000000)/1.000000)", test->stringify());
+	delete num1, num2, num3, left, test;
 }
 
 TEST(DivTest, numchildrentest) {
@@ -89,6 +98,7 @@ TEST(DivTest, numchildrentest) {
 	Base* val2 = new Op(1.0);
 	Base* divn = new Div(val1,val2);
 	EXPECT_EQ(divn->number_of_children(),2);
+	delete val1, val2, divn;
 }
 
 TEST(DivTest, getChild){
@@ -97,6 +107,7 @@ TEST(DivTest, getChild){
 	Base* divn = new Div(val1,val2);
 	EXPECT_EQ(divn->get_child(0),val1);
 	EXPECT_EQ(divn->get_child(1),val2);
+	delete val1, val2, divn;
 }
 
 #endif 
