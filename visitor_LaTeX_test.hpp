@@ -22,6 +22,8 @@ TEST(VisitorLaTeXTest, OpCount) {
     VisitorLaTeX* latex = new VisitorLaTeX();
     string out = "${0.000000}$\n";    
     EXPECT_EQ(latex->PrintLaTeX(num[0]), out);
+	for(auto i: num) delete i;
+	delete latex;
 }
 
 TEST(VisitorLaTeXTest, AllOperators) {
@@ -40,8 +42,8 @@ TEST(VisitorLaTeXTest, AllOperators) {
     EXPECT_EQ(latex->PrintLaTeX(ans), out);
 
     for (auto i : num) delete i;
-    delete latex, ans;
-    delete add, sub, mult, div;
+    delete latex;delete ans;
+    delete add;delete sub;delete mult;delete div;
 }
 
 TEST(VisitLaTeXTest, multiple1) {
@@ -56,7 +58,7 @@ TEST(VisitLaTeXTest, multiple1) {
         EXPECT_EQ(latex->PrintLaTeX(ans), out);
 
         for (auto i : num) delete i;
-    	    delete latex, left, right, ans;
+    	    delete latex;delete left;delete right;delete ans;
 }
 
 TEST(VisitLaTeXTest, Multiple2) {
@@ -71,7 +73,7 @@ TEST(VisitLaTeXTest, Multiple2) {
         EXPECT_EQ(latex->PrintLaTeX(ans1), out);
     
         for (auto i : num) delete i;
-            delete latex, x, ans1;
+            delete latex;delete x;delete ans1;
 }
 
 #endif
