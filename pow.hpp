@@ -54,6 +54,9 @@ class Pow : public Base{
 				visitor->visit_pow_end(this); 
 			}	
 		}
+		virtual string print(){
+			return "**";
+		}
 };
 
 #endif
