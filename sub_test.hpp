@@ -16,7 +16,7 @@ TEST(SubTest, SubEvalPos){
 	Op* val2 = new Op(1.0);
 	Sub* test = new Sub(val1, val2);
 	EXPECT_DOUBLE_EQ(test->evaluate(),1.8);
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 TEST(SubTest, SubEvalNeg){
@@ -24,7 +24,7 @@ TEST(SubTest, SubEvalNeg){
         Op* val2 = new Op(-1.0);
         Sub* test = new Sub(val1, val2);
         EXPECT_DOUBLE_EQ(test->evaluate(),-1.8);
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 TEST(SubTest, SubEvalZero){
@@ -32,7 +32,7 @@ TEST(SubTest, SubEvalZero){
         Op* val2 = new Op(0.0);
         Sub* test = new Sub(val1, val2);
         EXPECT_EQ(test->evaluate(),0.0);
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 TEST(SubTest, SubEvalAdd){
@@ -42,7 +42,7 @@ TEST(SubTest, SubEvalAdd){
         Add* num  = new Add(val1, val2);
 	Sub* test = new Sub(val3, num);
         EXPECT_DOUBLE_EQ(test->evaluate(),1.2);
-	delete val1, val2, test, val3, num;
+	delete val1;delete val2;delete test;delete val3;delete num;
 }
 
 TEST(SubTest, SubStringPos){
@@ -50,7 +50,7 @@ TEST(SubTest, SubStringPos){
         Op* val2 = new Op(1.0);
         Sub* test = new Sub(val1, val2);
         EXPECT_EQ(test->stringify(), "(2.800000-1.000000)");
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 
@@ -59,7 +59,7 @@ TEST(SubTest, SubStringNeg){
         Op* val2 = new Op(-1.0);
         Sub* test = new Sub(val1, val2);
         EXPECT_EQ(test->stringify(), "(-2.800000--1.000000)");
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 } 
 
 TEST(SubTest, SubStringZero){
@@ -67,7 +67,7 @@ TEST(SubTest, SubStringZero){
         Op* val2 = new Op(0.0);
         Sub* test = new Sub(val1, val2);
         EXPECT_EQ(test->stringify(), "(0.000000-0.000000)");
-	delete val1, val2, test;
+	delete val1;delete val2;delete test;
 }
 
 TEST(SubTest, SubStringAdd){
@@ -77,7 +77,7 @@ TEST(SubTest, SubStringAdd){
         Add* num  = new Add(val1, val2);
         Sub* test = new Sub(val3, num);
         EXPECT_EQ(test->stringify(), "(5.000000-(2.800000+1.000000))");
-	delete val1, val2, test, val3, num;
+	delete val1;delete val2;delete test;delete val3;delete num;
 }
 
 TEST(SubTest, SubEvalMany){
@@ -88,7 +88,7 @@ TEST(SubTest, SubEvalMany){
 	Pow* pw = new Pow(multn,val2);
 	Sub* subn = new Sub(pw,val1);
 	EXPECT_EQ(subn->evaluate(),1.0);
-	delete val1, val2, divn, multn, pw, subn;
+	delete val1;delete val2;delete divn;delete multn;delete pw;delete subn;
 }
 
 TEST(SubTest, SubStrMany){
@@ -99,7 +99,7 @@ TEST(SubTest, SubStrMany){
         Pow* pw = new Pow(multn,val2);
         Sub* subn = new Sub(pw,val1);
         EXPECT_EQ(subn->stringify(),"((((3.000000/3.000000)*2.000000)**2.000000)-3.000000)");
-	delete val1, val2, divn, multn, pw, subn;
+	delete val1;delete val2;delete divn;delete multn;delete pw;delete subn;
 }
 //new tests
 
@@ -108,7 +108,7 @@ TEST(SubTest, numchildrentest){
 	Base* val2 = new Op(2.0);
 	Base* subn = new Sub(val1,val2);
 	EXPECT_EQ(subn->number_of_children(),2);
-	delete val1, val2, subn;
+	delete val1;delete val2;delete subn;
 }
 
 TEST(SubTest, getChild){
@@ -117,7 +117,7 @@ TEST(SubTest, getChild){
 	Base* subn = new Sub(val1,val2);
 	EXPECT_EQ(subn->get_child(0),val1);
 	EXPECT_EQ(subn->get_child(1),val2);
-	delete val1, val2, subn;
+	delete val1;delete val2;delete subn;
 }
 
 
