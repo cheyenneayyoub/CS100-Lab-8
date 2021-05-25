@@ -48,6 +48,9 @@ class Add : public Base{
 				visitor->visit_add_end(this); 
 			}	
 		}
+		virtual string print(){
+			return "+";
+		}
 };
 
 #endif
