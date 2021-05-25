@@ -58,7 +58,9 @@ class Div : public Base {
 			visitor->visit_div_end(this); 
 		}	
 	}	
-
+	virtual string print(){
+		return "/";
+	}
 	private:
         Base *lnode, *rnode;
 
