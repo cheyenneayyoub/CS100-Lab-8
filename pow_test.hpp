@@ -1,9 +1,13 @@
+#ifndef __POW_TEST_HPP__
+#define __POW_TEST_HPP__
+
 #include "base.hpp"
 #include "pow.hpp"
 #include "add.hpp"
 #include "sub.hpp"
 #include "mult.hpp"
 #include "div.hpp"
+#include "op.hpp"
 
 using namespace std;
 
@@ -115,3 +119,5 @@ TEST(PowTest, getChild){
 	EXPECT_EQ(pown->get_child(0),val1);
 	EXPECT_EQ(pown->get_child(1),val2);
 }
+
+#endif
