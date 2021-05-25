@@ -25,7 +25,7 @@ TEST(RandTest, RandCheckString) {
         EXPECT_NE(test->evaluate(), -1);
 }
 //new tests 
-
+/*
 TEST(RandTest, NumOfChildren){
 	Base* val1 = new Op(3.0);
 	Base* val2 = new Op(2.0);
@@ -40,5 +40,6 @@ TEST(RandTest, getChild){
 	EXPECT_EQ(randn->get_child(0),val1);
 	EXPECT_EQ(randn->get_child(1),val2);
 }
+*/
 #endif
 

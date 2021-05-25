@@ -40,16 +40,21 @@ TEST(OpTest, OpStringNegative){
 // new tests
 
 TEST(OpTest, getChild){
-	Base* val1 = new Op(3.0);
-	Base* opn = new Op(val1);
-	EXPECT_EQ(opn->get_child(0),val1);
+	Base* opn = nullptr;
+	opn = new Op(2);
+	EXPECT_EQ(opn->get_child(0),nullptr);
 
 }
 
-TEST(OPTEST, GetChildNULL) {
-	Base* val1 = new Op(NULL);
-	Base* opn = new Op(val1);
-	EXPECT_EQ(opn->get_child(0), val1);
+TEST(OpTest, GetChildNULL) {
+	Base* opn = nullptr;
+	opn = new Op(12);
+	EXPECT_EQ(opn->get_child(5), nullptr);
 }
 
+
+TEST(OpTest, numChildren){
+	Base* opn = new Op(2);
+	EXPECT_EQ(opn->number_of_children(),0);
+}
 #endif

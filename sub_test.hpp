@@ -95,8 +95,8 @@ TEST(SubTest, SubStrMany){
 TEST(SubTest, numchildrentest){
 	Base* val1 = new Op(3.0);
 	Base* val2 = new Op(2.0);
-	Base* Sub = new Sub(val1,val2);
-	EXPECT_EQ(Sub->number_of_children(),2);
+	Base* subn = new Sub(val1,val2);
+	EXPECT_EQ(subn->number_of_children(),2);
 }
 
 TEST(SubTest, getChild){
