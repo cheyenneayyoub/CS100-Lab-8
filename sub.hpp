@@ -39,6 +39,17 @@ class Sub : public Base{
 			}	
 		}
 
+		void accept(Visitor* visitor, int index) override{
+			if(index == 0) { 
+				visitor->visit_sub_begin(this);  
+			}	
+			else if(index == 1) { 
+				visitor->visit_sub_middle(this); 
+			}
+			else {
+				visitor->visit_sub_end(this); 
+			}	
+		}
 };
 
 #endif
