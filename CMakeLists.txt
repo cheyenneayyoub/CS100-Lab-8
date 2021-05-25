@@ -4,10 +4,6 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_SUBDIRECTORY(googletest)
 
-ADD_EXECUTABLE(visParser
-    iterator.cpp
-)
-
 ADD_EXECUTABLE(test
     unit_test.cpp
     iterator.cpp
