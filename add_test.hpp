@@ -6,7 +6,7 @@
 #include "pow.hpp"
 */
 #include "add.hpp"
-
+#include "op.hpp"
 
 TEST(AddTest, AddEvalPositive){
 	Op* val1 = new Op(1.0);
