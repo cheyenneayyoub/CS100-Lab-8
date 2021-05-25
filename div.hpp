@@ -45,6 +45,18 @@ class Div : public Base {
 		if(i == 1){
 			return rnode;
 		}
+	}
+
+	void accept(Visitor* visitor, int index) {
+		if(index == 0) { 
+			visitor->visit_div_begin(this);  
+		}	
+		else if(index == 1) { 
+			visitor->visit_div_middle(this); 
+		}
+		else {
+			visitor->visit_div_end(this); 
+		}	
 	}	
 
 	private:
