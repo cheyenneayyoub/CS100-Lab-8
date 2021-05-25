@@ -58,7 +58,9 @@ class Mult : public Base {
 			visitor->visit_mult_end(this); 
 		}	
 	}
-
+	virtual string print() {
+		return "*";
+	}
 };
 
 #endif
