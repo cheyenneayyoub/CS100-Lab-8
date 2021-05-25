@@ -25,6 +25,6 @@ int main(){
 	Base* ex6 = new Add(ex1, ex4);
 	cout << "Should look like: $(({5.000000}+{2.000000})+(\\frac{{2.000000}}{{2.000000}))$" << endl;
 	cout << "Got: " << latex->PrintLaTeX(ex6) << endl;
-	delete latex, val1, val2, ex1, ex2, ex3, ex4, ex5, ex6;
+	delete latex;delete val1;delete val2;delete ex1;delete ex2;delete ex3;delete ex4;delete ex5;delete ex6;
 	return 0;
 }
