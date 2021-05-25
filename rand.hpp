@@ -28,7 +28,10 @@ class Rand : public Base {
 
 	void accept(Visitor* visitor, int index) {
 		visitor->visit_rand(this);
-	}	
+	}
+	virtual string print(){
+		return stringify();
+	}		
 	private:
 	double numval;
 	string strval;
