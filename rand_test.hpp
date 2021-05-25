@@ -13,16 +13,19 @@ using namespace std;
 TEST(RandTest, RandCheckLE) {
 	Rand* test = new Rand ();
 	EXPECT_LE(test->evaluate(), 100);
+	delete test;
 }
 
 TEST(RandTest, RandCheckGE) {
         Rand* test = new Rand ();
         EXPECT_GE(test->evaluate(), 0);
+	delete test;
 }  
 
 TEST(RandTest, RandCheckString) {
         Rand* test = new Rand ();
         EXPECT_NE(test->evaluate(), -1);
+	delete test;
 }
 //new tests 
 /*
