@@ -30,7 +30,7 @@ public:
 	void accept(Visitor* visitor, int index) {
 		visitor->visit_op(this);
 	}
-	vitrual string print(){
+	virtual string print(){
 		return stringify();
 	}
 };
