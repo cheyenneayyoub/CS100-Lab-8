@@ -27,6 +27,9 @@ public:
 	int number_of_children() { 
 		return 0;
 	}
+	void accept(Visitor* visitor, int index) {
+		visitor->visit_op(this);
+	}
 };
 
 #endif //__OP_HPP__
