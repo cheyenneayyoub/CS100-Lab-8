@@ -23,6 +23,10 @@ public:
 	Base* get_child(int i) {
 		return NULL;
 	}
+
+	int number_of_children() { 
+		return 0;
+	}
 };
 
 #endif //__OP_HPP__
